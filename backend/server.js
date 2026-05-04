@@ -7,8 +7,9 @@ import authRoutes from './routes/auth.js';
 const app = express();
 connectDB();
 app.use(cors({
- origin: process.env.FRONTEND_URL,
- credentials: true
+  origin: process.env.FRONTEND_URL, 
+  methods: ["GET", "POST", "PUT", "DELETE"], 
+  credentials: true
 }));
 app.use(express.json());
 app.use(cookieParser());
